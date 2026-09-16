@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FC 27 Database</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080a0f;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    height: 72px;
+    background: #10131a;
+    border-bottom: 1px solid #242936;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #35e879;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #a5aab5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 360px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background:
+        radial-gradient(circle at center, #17251d 0%, #080a0f 60%);
+}
+
+.hero h1 {
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: #35e879;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #8d94a3;
+    font-size: 18px;
+}
+
+.hero-button {
+    margin-top: 30px;
+
+    background: #35e879;
+    color: #07100b;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 14px 28px;
+
+    font-size: 16px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+.hero-button:hover {
+    background: #55f18f;
+    transform: translateY(-2px);
+}
+
+/* DATABASE */
+
+.database {
+    max-width: 1250px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.database-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.database-title h2 {
+    font-size: 30px;
+}
+
+.database-title span {
+    color: #7f8795;
+}
+
+/* SEARCH */
+
+.search-area {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+}
+
+.search-area input,
+.search-area select {
+    width: 100%;
+
+    background: #11151d;
+    color: white;
+
+    border: 1px solid #292e39;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    outline: none;
+}
+
+.search-area input:focus,
+.search-area select:focus {
+    border-color: #35e879;
+}
+
+/* EMPTY DATABASE */
+
+.empty {
+    min-height: 300px;
+
+    background: #11151d;
+
+    border: 1px solid #242936;
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.empty h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.empty p {
+    color: #7f8795;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* FEATURES */
+
+.features {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 0 20px 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.feature {
+    background: #11151d;
+
+    border: 1px solid #242936;
+
+    border-radius: 16px;
+
+    padding: 25px;
+}
+
+.feature-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #7f8795;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #242936;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #626a78;
+
+    background: #0b0d12;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .search-area {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 0 18px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        FC<span>27</span> DB
+    </div>
+
+    <nav>
+        <a href="#">Players</a>
+        <a href="#">Database</a>
+        <a href="#">Prices</a>
+        <a href="#">PlayStyles</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        FC 27 <span>Player Database</span>
+    </h1>
+
+    <p>
+        Players · Ratings · Stats · PlayStyles · Prices
+    </p>
+
+    <button class="hero-button" onclick="scrollToDatabase()">
+        Bekijk spelers
+    </button>
+
+</section>
+
+
+<section class="database" id="database">
+
+    <div class="database-title">
+
+        <h2>Players</h2>
+
+        <span>FC 27 Database</span>
+
+    </div>
+
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            placeholder="Zoek speler..."
+        >
+
+        <select>
+            <option>Alle posities</option>
+            <option>ST</option>
+            <option>LW</option>
+            <option>RW</option>
+            <option>CAM</option>
+            <option>CM</option>
+            <option>CDM</option>
+            <option>CB</option>
+            <option>LB</option>
+            <option>RB</option>
+            <option>GK</option>
+        </select>
+
+        <select>
+            <option>Alle ratings</option>
+            <option>90+</option>
+            <option>85+</option>
+            <option>80+</option>
+            <option>75+</option>
+            <option>70+</option>
+        </select>
+
+        <select>
+            <option>Alle kaarten</option>
+            <option>Gold</option>
+            <option>Silver</option>
+            <option>Bronze</option>
+            <option>Special</option>
+        </select>
+
+    </div>
+
+
+    <div class="empty">
+
+        <div class="empty-icon">
+            ⚽
+        </div>
+
+        <h3>
+            Player database komt hier
+        </h3>
+
+        <p>
+            Dit is onze schone basis.
+            Hier gaan we straks de echte FC 27 spelers,
+            kaarten, ratings, stats en PlayStyles in zetten.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🃏
+        </div>
+
+        <h3>
+            Player Cards
+        </h3>
+
+        <p>
+            Bekijk spelers met hun FC 27 kaart,
+            rating en belangrijke informatie.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            📊
+        </div>
+
+        <h3>
+            Player Stats
+        </h3>
+
+        <p>
+            PAC, SHO, PAS, DRI, DEF en PHY
+            worden per speler weergegeven.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            🎯
+        </div>
+
+        <h3>
+            PlayStyles
+        </h3>
+
+        <p>
+            PlayStyles en PlayStyle+ met
+            afbeeldingen en uitleg.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <div class="feature-icon">
+            💰
+        </div>
+
+        <h3>
+            Market Prices
+        </h3>
+
+        <p>
+            Later voegen we marktprijzen toe
+            voor de verschillende platformen.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    FC27 DB · FC 27 Player Database
+
+</footer>
+
+
+<script>
+
+function scrollToDatabase() {
+
+    document
+        .getElementById("database")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+</script>
+
+</body>
+</html>
